@@ -6,7 +6,7 @@ public:
         if (n==0)
         return 0;
         int ans=1,left=0;
-        map<char,int>mpp;
+        unordered_map<char,int>mpp;
         for (int i=0;i<n;i++)
         {
             char ch=s[i];
