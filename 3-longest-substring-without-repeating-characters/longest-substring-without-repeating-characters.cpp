@@ -5,18 +5,15 @@ public:
         int n=s.size();
         if (n==0)
         return 0;
-        int cnt=0,ans=1,left=0;
-        unordered_map<char,int>mpp;
-       
+        int ans=1,left=0;
+        map<char,int>mpp;
         for (int i=0;i<n;i++)
         {
             char ch=s[i];
             if (mpp.find(ch)!=mpp.end())
             left=max(left,mpp[ch]+1);
             mpp[ch]=i;
-            cnt=i-left+1;
-            ans=max(ans,cnt);
-          
+            ans=max(ans,i-left+1);
         }
         return ans;
     }
